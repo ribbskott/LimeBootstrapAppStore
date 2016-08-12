@@ -41,6 +41,10 @@ lbs.apploader.register('businessfunnel', function () {
 
         var data = viewModel.businessfunnel.data.businessfunnel.all; 
         
+        if (!Array.isArray(data.value)) {
+            var arr = [data.value];
+            data.value = arr;
+        }
         
         salesfunnel.name = self.config.name;  
         
@@ -50,8 +54,16 @@ lbs.apploader.register('businessfunnel', function () {
 
         //FIND MAX TO BE USED AS 100% IN PROGRESS BAR
               
-        var maxAll = _.max(data.value, function(value){return parseInt(value.businessvalue)}).businessvalue;
- 
+        getMaxAll = function(dataset){
+			var maxAll = 0;
+			for (var j = 0; j < dataset.value.length; j++) {
+				if(!_.contains(self.config.removeStatus, dataset.value[j].key)){
+					maxAll = maxAll + parseInt(dataset.value[j].businessvalue);
+				}
+			};
+
+            return maxAll;
+        }
         //CHECK IF COLOR IS SPECIFIED BY USER, IF NOT USED STANDARD COLORS        
         if(self.config.colors[0]) {
                 // does exist
@@ -87,9 +99,9 @@ lbs.apploader.register('businessfunnel', function () {
                     //SET ALL BUSINESSVALUES TO INTEGERS
                     data.value[i].businessvalue = parseInt(data.value[i].businessvalue);  
                 
-                    data.value[i].percentText = (parseInt(data.value[i].businessvalue)/parseInt(maxAll))*100 +'%';
+                    data.value[i].percentText = (parseInt(data.value[i].businessvalue)/parseInt(getMaxAll(data)))*100 +'%';
                                         
-                    data.value[i].percent = (parseInt(data.value[i].businessvalue)/parseInt(maxAll))*100;
+                    data.value[i].percent = (parseInt(data.value[i].businessvalue)/parseInt(getMaxAll(data)))*100;
      
                     data.value[i].money = $.number(
                         (parseInt(data.value[i].businessvalue)/self.config.divider), self.config.decimals, ',', ' '
@@ -116,9 +128,12 @@ lbs.apploader.register('businessfunnel', function () {
             var newData={};            
             newData = lbs.loader.loadDataSources(newData, self.config.dataSources, true);
             newData = newData.businessfunnel.data.businessfunnel.all                    
-            //FIND NEW MAX
-            maxAll = _.max(newData.value, function(value){return parseInt(value.businessvalue)}).businessvalue;
             
+            if (!Array.isArray(newData.value)) {
+                var arr = [newData.value];
+                newData.value = arr;
+            }
+        
             fixData(newData);
             
         }
@@ -134,8 +149,10 @@ lbs.apploader.register('businessfunnel', function () {
             newData = lbs.loader.loadDataSources(newData, self.config.dataSources, true);
             newData = newData.businessfunnel.data.businessfunnel.coworker
             
-            //FIND NEW MAX
-            maxAll = _.max(newData.value, function(value){return parseInt(value.businessvalue)}).businessvalue;
+            if (!Array.isArray(newData.value)) {
+                var arr = [newData.value];
+                newData.value = arr;
+            }            
             
             fixData(newData);
             

@@ -1,0 +1,22 @@
+{
+	"name": "Course Queue",
+	"author":"ILE",
+	"status":"Development",
+	"shortDesc":"The No.1 queue management tool for course / campaign handling!",
+	"versions":[
+		{
+			"version":"1.1",
+			"date":"2014-03-14",
+			"comments":"Fixed it so it now look more nice"
+		},
+
+		{
+			"version":"1.0",
+			"date":"2014-02-06",
+			"comments":"First commit"
+		}
+	],
+	"install":{
+		
+	}
+}

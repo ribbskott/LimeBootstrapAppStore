@@ -11,13 +11,19 @@ It has two stages, All and Mine:
 It shows all strings in local language.
 
 ###To use:
-Insert the SQL proceduer named **getBusinessValue.sql** in the database where you want to use the business funnel. 
+Open SQL-management studio, find the database where you want to use the business funnel and choose "New Query". Insert the SQL proceduer named **getBusinessValue.sql** from the Install folder. In order for LIME to understand that the procedure exists in the database you need to execute a new query: 
+exec lsp_refreshldc
+exec lsp_refreshcaches
+
+Do not forget to insert the **businessfunnel.vba** from the Install folder to the VBA for your database.
 
 Copy the business funnel app folder to the apps folder under the actionpad folder.
 
 Insert the following html tag in the actionpad where you want it to be shown, most likeley the index actionpad.
 
 	`<div data-app="{app:'businessfunnel'}"></div>`
+
+Create two localize posts. Owner should be businessfunnel and code should be "all" and "mine". This is the labels for the filter of the business funnel. 	
 
 ##Configurating the business funnel
 Following field need to be implemented in the database:
@@ -55,7 +61,7 @@ The customer want the currency in "kr" and they only have small deals so they do
 *	divider = 1
 *	remove statuses 'onhold' and 'rejection' (key on the optionfield)
 
-	`<div data-app="{app:'businessfunnel', config:{  currency:'kr', divider:1, removeStatus:'onhold','rejection']}}"></div>`
+	`<div data-app="{app:'businessfunnel', config:{  currency:'kr', divider:1, removeStatus:['onhold','rejection']}}"></div>`
 	
 
 ####Example 2

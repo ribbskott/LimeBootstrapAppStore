@@ -1,0 +1,16 @@
+{
+	"name": "Spotify Remote",
+	"shortDesc":"Spotify in LIME Pro? Mind blown!",
+	"author":"MHE",
+	"status":"Release",
+	"versions":[
+		{
+			"version":"1.0",
+			"date":"2014-05-08",
+			"comments":"Creation"
+		}
+	],
+	"install":{
+		
+	}
+}

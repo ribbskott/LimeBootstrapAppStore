@@ -1,0 +1,17 @@
+{
+	"name": "Notify",
+	"author":"Gbg-Appathon Group",
+	"status":"Beta",
+	"shortDesc": "Keep calm and let Notify Notify",
+
+	"versions":[
+		{
+			"version":"1.0",
+			"date":"2014-05-08",
+			"comments":" First version"
+		}
+	],
+	"install":{
+		
+	}
+}

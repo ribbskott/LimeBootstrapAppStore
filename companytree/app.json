@@ -1,0 +1,22 @@
+{
+	"name": "Company Tree",
+	"author":"JKA",
+	"status":"Release",
+	"shortDesc" : "App for visualizing corporation structure.",
+	"license": true,
+	"versions":[
+		{
+			"version":"0.1",
+			"date":"2015-01-29",
+			"comments":"Creation"
+		},
+		{
+			"version":"1.0",
+			"date":"2015-02-18",
+			"comments":"Fixed bugs and added support for contact persons."
+		}
+	],
+	"install":{
+		
+	}
+}

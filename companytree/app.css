@@ -1,0 +1,50 @@
+.node circle.company{
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+  /*z-index: 1001;*/
+}
+
+.node circle.person{
+  fill: #fff;
+  stroke: #c2b800;
+  stroke-width: 1.5px;
+  /*z-index: 1001;*/
+}
+
+.node circle:hover {
+  fill: #eee;
+  stroke: #1E90FF;
+  cursor: pointer;
+}
+
+.node circle.person:hover {
+  fill: #eee;
+  stroke: #c2b800;
+  cursor: pointer;
+}
+
+.node {
+  font: 10px sans-serif;
+  /*z-index:1000;*/
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+  /*z-index: 10;*/
+}
+
+#treecontainerlist{
+  height: 100%;
+
+}
+
+#treecontainerwindowed{
+  height: 105%;
+  width: 105%;
+  margin-left: -1%;
+  margin-top: -2%;
+  background-color: #fff;
+}

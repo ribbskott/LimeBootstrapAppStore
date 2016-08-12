@@ -1,0 +1,15 @@
+{
+	"name": "Pies",
+	"author":"Andreas Åström",
+	"status":"Beta",
+	"versions":[
+		{
+			"version":"0.1",
+			"date":"2014-05-28",
+			"comments":"Creation"
+		}
+	],
+	"install":{
+		
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"name": "SMS",
+	"author":"Andreas",
+	"status":"Release",
+	"license": true,
+	"description": "Why not send SMS from LIME Pro?", 
+	"versions":[
+		{
+			"version":"0.1",
+			"date":"2015-06-09",
+			"comments":"Creation"
+		}
+		,{
+			"version":"1.0",
+			"date":"2015-10-02",
+			"comments":"Release"
+		}
+
+	],
+	"install":{
+		
+	}
+}
