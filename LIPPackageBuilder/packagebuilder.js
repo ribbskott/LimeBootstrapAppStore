@@ -91,6 +91,10 @@ packagebuilder = {
                                 
                         }
                         
+                        if(packageField.attributes.optionquery){
+                            delete packageField.attributes.optionquery;
+                        }
+                        
                         if(packageField.separator && packageField.separator.order){
                             delete packageField.separator.order;   
                         }
