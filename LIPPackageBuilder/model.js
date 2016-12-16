@@ -131,7 +131,11 @@ var Field = function(f, tablename){
         try{
             if(attributeName == 'fieldtype'){
                 self.attributes[attributeName] = vm.fieldTypes[f[attributeName]];
+                if (self.attributes[attributeName] === 'relation'){
+                    self.attributes["relationtab"] = '0';
+                }
             }
+            //Add the 'relationtab' property (this should really be called something else)
             else if(attributeName == 'relationsingle'){
                 self.attributes["relationtab"] = f[attributeName] == '0' ? '1':'0';
             }
