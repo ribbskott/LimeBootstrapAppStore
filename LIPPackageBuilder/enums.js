@@ -212,7 +212,11 @@ enums = {
             "time" : "Time",
             "integer" : "Integer",
             "decimal" : "Decimal",
-            "user" : "Username"
+            "user" : "Username",
+            "set": "Set",
+            "file": "File",
+            "xml": "XML",
+            "html": "HTML"
         };
         
         vm.excludedOptionAttributes = [
